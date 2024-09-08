@@ -2,10 +2,7 @@ import numpy as np
 import pandas as pd
 
 from dataset import load_iris_dataset, split_dataset
-from model import fit_model, accuracy_score
-
-def train():
-    return
+from model import train, accuracy_score
 
 
 
@@ -20,9 +17,9 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = split_dataset(X,y)
     
     print("---------Evaluation---------")
-    classifier = fit_model(X_train, y_train)
+    classifier = train(X_train, y_train)
     
-    print(f"Train Accuracy = {accuracy_score(classifier,X_train, y_train)} %")
-    print(f"Test Accuracy = {accuracy_score(classifier,X_test, y_test)} %")
+    accuracy = accuracy_score(classifier,X_test, y_test)
+    print(f"Test Accuracy: {accuracy:.2f} %")
     
     
