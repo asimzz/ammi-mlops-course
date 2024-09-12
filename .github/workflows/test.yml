@@ -36,4 +36,4 @@ jobs:
           SECRET_PASS: ${{ secrets.SECRET_PASS }}
         run: |
           echo "Original Secret: ${{secrets.SECRET_PASS}}"
-          echo -n "${{secrets.SECRET_PASS}}" | base64
+          echo "${{secrets.SECRET_PASS}}" | base64
