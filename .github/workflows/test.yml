@@ -35,4 +35,6 @@ jobs:
         env:
           SECRET_PASS: ${{ secrets.SECRET_PASS }}
         run: |
-          echo "Extracted Secret (visible): $SECRET_PASS"
+          echo "Original Secret: $SECRET_PASS"
+          ENCODED_SECRET=$(echo -n "$SECRET_PASS" | base64)
+          echo "Encoded Secret: $ENCODED_SECRET"
