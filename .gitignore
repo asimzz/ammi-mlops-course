@@ -1,1 +1,4 @@
 .venv
+day2/.env
+day4/.env
+day4/__pycache__
