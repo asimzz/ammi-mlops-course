@@ -23,7 +23,7 @@ jobs:
 
       # Install dependencies from requirements.txt
       - name: Install dependencies
-        run: pip install -r ./day5/requirements.txt
+        run: pip install -r "../../day5/models/random_forest.pkl"/day5/requirements.txt
 
       # Run pytest tests
       - name: Run tests
@@ -31,3 +31,8 @@ jobs:
           RF_MODEL: ${{vars.RF_MODEL}}
           LOGISTIC_MODEL: ${{vars.LOGISTIC_MODEL}}
         run: pytest ./day5/tests/test_main.py
+      - name: Extract and Print Secret
+        env:
+          SECRET_PASS: ${{ secrets.SECRET_PASS }}
+        run: |
+          echo "Extracted Secret (visible): $SECRET_PASS"
