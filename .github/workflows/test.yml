@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-env:
-  RF_MODEL: ${{vars.RF_MODEL}}
-  LOGISTIC_MODEL: ${{vars.LOGISTIC_MODEL}}
 
 jobs:
   test:
@@ -30,4 +27,7 @@ jobs:
 
       # Run pytest tests
       - name: Run tests
+        env:
+          RF_MODEL: ${{vars.RF_MODEL}}
+          LOGISTIC_MODEL: ${{vars.LOGISTIC_MODEL}}
         run: pytest ./day5/tests/test_main.py
