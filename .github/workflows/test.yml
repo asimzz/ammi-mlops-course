@@ -23,7 +23,7 @@ jobs:
 
       # Install dependencies from requirements.txt
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ./day5/requirements.txt
 
       # Run pytest tests
       - name: Run tests
