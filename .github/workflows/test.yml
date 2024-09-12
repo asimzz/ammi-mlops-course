@@ -5,17 +5,15 @@ on:
   push:
     branches:
       - main
+env:
+  RF_MODEL: ${{vars.RF_MODEL}}
+  LOGISTIC_MODEL: ${{vars.LOGISTIC_MODEL}}
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: using env variables
-        run: |
-          echo "variable: ${{vars.LOGISTIC_MODEL}}"
-          echo "variable: ${{vars.RF_MODEL}}"
-
       # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
